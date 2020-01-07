@@ -53,8 +53,10 @@ function pcaCalculate (matrix)
   group1 = pc(:, 1:50);
   group2 = pc(:, 51:100);
   group3 = pc(:, 101:150);
+  figure(1)
   plot(group1(1,:), group1(2,:), 'b.', 'MarkerSize', 15, group2(1,:), group2(2,:), 'r.', 'MarkerSize', 15, group3(1,:), group3(2,:), 'g.', 'MarkerSize', 15); 
   legend('Setosa', 'Versicolor', 'Virginica');
+  
 
 endfunction
 
@@ -66,8 +68,10 @@ function pcaCalculate2 (matrix)
   group1 = pc(:, 1:59);
   group2 = pc(:, 60:130);
   group3 = pc(:, 131:178);
+  figure(2)
   plot(group1(1,:), group1(2,:), 'b.', 'MarkerSize', 15, group2(1,:), group2(2,:), 'r.', 'MarkerSize', 15, group3(1,:), group3(2,:), 'g.', 'MarkerSize', 15); 
-  %legend('Setosa', 'Versicolor', 'Virginica');
+  legend('Class1', 'Class2', 'Class3');
+
 
 endfunction
 
@@ -79,6 +83,6 @@ pcadm2(x2)
 [coeff2] = princomp(x2);
 pcaCalculate2(x2);
 %apply pca 
-%pcaCalculate(x1);
+pcaCalculate(x1);
 
 
